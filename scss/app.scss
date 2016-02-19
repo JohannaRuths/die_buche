@@ -1,0 +1,392 @@
+
+// IMPORTS
+@import "settings";
+@import "foundation";
+@import "foundation/components/button-groups";
+
+// VIARIBLEN
+$width: 100%;
+$rot: #C4231A;
+$p: #222;
+$p2: #42301F;
+$braun: #5a4e40;
+$green: #89f56d;
+$creme: #f1eedd;
+$font-serif: Georgia, Times, "Times New Roman", serif;
+$font-sans-serif: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+
+
+
+// MIXINS
+@mixin linx ($link, $focus, $hover, $active) {
+  a {
+    color: $link;
+    &:focus {
+      color: $focus;
+    }
+    &:hover {
+      color: $hover;   
+    }
+    &:active {
+      color: $active;
+    }
+  }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin border ($color, $side) {
+  -webkit-border-radius: 1px;
+     -moz-border-radius: 1px;
+      -ms-border-radius: 1px;
+          border-#{$side}: 1px dashed $color;
+}
+
+@mixin font ($size, $color, $family) {
+	font-size: $size;
+	font-family: $family;
+	color: $color;
+}
+
+@mixin borderSides($top, $right, $bottom, $left, $color) {
+  -webkit-border-radius: $top;
+     -moz-border-radius: $top;
+      -ms-border-radius: $top;
+          border-top: $top dashed $color;
+  -webkit-border-radius: $right;
+     -moz-border-radius: $right;
+      -ms-border-radius: $right;
+          border-right: $right dashed $color;
+  -webkit-border-radius: $bottom;
+     -moz-border-radius: $bottom;
+      -ms-border-radius: $bottom;
+          border-bottom: $bottom dashed $color;
+  -webkit-border-radius: $left;
+     -moz-border-radius: $left;
+      -ms-border-radius: $left;
+          border-left: $left dashed $color;
+}
+
+
+
+
+/*******************************
+GENERAL
+*******************************/
+
+
+ #skip a {
+ 		color: $braun;
+        position:absolute;
+        left:-10000px;
+        top:auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+    }
+
+    #skip a:focus {
+        position:static;
+        width:auto;
+        height:auto;
+    }
+
+// ul.small-centered {
+// margin-left: auto;
+// margin-right: auto;
+// float: none !important; }
+
+body {
+
+	background-image: url("../images/bg.jpg");
+	background-repeat: repeat;
+	font-family: $font-serif;
+	color: $p;
+}
+
+hr {
+	@include border ($braun, top);
+
+    margin: 0.4em 0 ;
+}
+
+h2 span{
+	@include font (1.3rem, $rot, $font-serif);
+
+	@include border ($rot, bottom);
+}
+
+.row {
+	@extend .icon-bar.seven-up;
+	//max-width: 1000px;
+	//width: 75%;
+}
+
+/*******************************
+HEADER
+*******************************/
+
+#logo {
+	margin-top: 6%;  
+}
+
+// LANGUAGE BUTTONS
+a.responsive-button {
+	@include button($button-tny, $braun, 0px, false, false, false);
+
+	&:focus {
+		background-color: $braun;
+
+	}
+	&:hover {
+		background-color: $braun;
+		color: $green;
+	}
+
+	&.active {
+		color: $green;
+	}
+		
+}
+
+
+#btnright {
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 0px;
+}
+	
+#btnleft {
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 0px;	
+}
+
+
+// NAVIGATION
+
+
+.icon-bar.seven-up {
+	max-width: 1000px;
+	width: 75%;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+}
+
+a {
+	&.item{
+		@include borderSides (1px, 1px, 1px, 0px, $braun); 
+		padding: 7px 10px;
+	}
+	&.last-item {
+		border-right: none;
+	}
+
+	&.selected label {
+		color: $rot;
+	}
+
+	label {
+		font-size: 1.1em;
+	}
+}
+
+
+// OFF-CANVAS NAVIGATION
+.off-canvas-list {
+	font-family: $font-sans-serif;
+}
+
+
+// SLIDER BZW. HEADER-BILD
+
+.orbit-container{
+	margin-top: 3em;
+}
+
+.orbit-bullets {
+	margin-bottom: 5px;
+}
+
+a.orbit-prev, a.orbit-next {
+	visibility: hidden;
+}
+
+.bild {
+	margin-top: 0.3em;
+}
+
+
+/*******************************
+BODY
+*******************************/
+
+// ENTDECKE
+#accordion {
+	margin-bottom: 3%;
+
+	.ui-accordion-header {     
+		@include font (1.2rem, $rot, $font-serif);
+		background-image: none;
+		background-color: transparent;
+		border: none;
+
+	}
+
+	.ui-accordion-content {
+		@extend .ui-accordion-header;
+		@include font (1rem, $p, $font-serif);
+
+	}
+
+}
+
+
+// LAGE
+.lageBorder {
+	@include border ($braun, right);
+}
+
+
+.main {      // Padding für Main Inhalt
+	margin-bottom: 3%;
+	padding: 0 3%;
+}
+
+
+// ANFRAGE
+form {
+
+	label{
+		@include font (1rem, $p, $font-serif);
+	}
+
+	.button.senden {
+
+		@include button($button-sml, $rot, 4px, false, false, false); 
+	}
+
+}
+
+.anfrageBorder {
+	padding-top: 1em;
+	@include border ($braun, left);
+}
+
+
+
+
+
+/*******************************
+FOOTER
+*******************************/
+
+
+footer {
+	@include linx ($creme, $creme, $green, $green);
+
+	span, a {
+		display: block;
+	}
+
+	&.row {
+		background-color: $braun;
+		padding: 30px 0;
+		margin-bottom: 50px;   // Abstand zu Ende
+		border-radius: 0 0 30px 30px;
+		@include font (0.8rem, $creme, $font-sans-serif);
+	}
+
+	.imglink:hover {
+    	opacity: 0.4;
+ 	}
+
+	.nassfeld {
+ 		margin-top: 20px;
+ 	}
+}
+
+
+/*******************************
+MEDIA SCREENS
+*******************************/
+
+// FROM-MEDIUM-DOWN
+@media screen and (max-width: 880px) {
+
+    footer.row, .row, .icon-bar.seven-up{
+		width: 100%;
+	}
+   
+ //   .icon-bar.seven-up{
+	// 	width: 100%;
+	// }
+
+	footer.row {
+		@include border-radius (0px);
+		margin-bottom: 0px;
+	}
+
+	#logo {
+		margin-top: 5px;
+	}
+
+}
+
+// FOR-SMALL-ONLY
+@media screen and (max-width: 640px) {
+
+	.orbit-container {
+		margin-top: 0;
+		width: $width +20%;
+	}
+
+	.lageBorder, .anfrageBorder {
+		border: none;
+	}
+
+}
+
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switches",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
+

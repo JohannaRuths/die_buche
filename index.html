@@ -1,0 +1,164 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Die Buche</title>
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/png" href="images/favicon.ico">
+    <link rel="stylesheet" href="stylesheets/app.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="bower_components/modernizr/modernizr.js"></script>
+  </head>
+  <body>
+
+
+
+    <div class="row">
+      <!-- LOGO -->
+      <div class="medium-4 large-4 columns show-for-medium-up">
+        <a href="index.html"><img src="images/logo.png" alt="Logo" id="logo"></a>
+      </div>
+      <!-- LANGUAGE BUTTONS -->
+      <div class="medium-5 large-3 columns show-for-medium-up">
+        <ul class="button-group right">
+          <li><a href="#" class="button responsive-button active" id="btnleft">DEUTSCH</a></li>
+          <li><a href="#" class="button responsive-button" id="btnright">ENGLISH</a></li>  
+        </ul>
+      </div>
+    </div>
+
+    <!-- SKIP TO MAIN CONTENT -->
+    <div id="skip"><a href="#main-section">Skip to Main Content</a></div>
+
+
+<!-- OFF-CANVAS NAVIGATION -->
+
+    <div class="off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+        <nav class="tab-bar show-for-small-only" aria-hidden="true"> <!-- nur für small sichtbar -->
+          <!-- Burger auf rechter Seite-->
+          <section class="right-small"> 
+            <a class="right-off-canvas-toggle menu-icon" href="#"><span></span></a>  
+          </section>
+          <!-- Tab-bar-section mit Logo linksbündig -->
+          <section class="left tab-bar-section">
+            <a href="index.html"><img class="left" src="images/logo.png" alt="Logo" width="130px" id="logo"></a>
+          </section>  
+        </nav>
+        
+        <!-- OFF-Canvas Nav List -->
+        <aside class="right-off-canvas-menu show-for-small-only">
+          <ul class="off-canvas-list">
+            <li><label>Language</label></li>
+            <li><a href="#">Deutsch</a></li>
+            <li><a href="#">English</a></li>
+            <li><label>Menu</label></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="entdecke.html">Entdecke</a></li>
+            <li><a href="wohnen.html">Wohnen</a></li>
+            <li><a href="#">Aktiv</a></li>
+            <li><a href="#">Preise</a></li>
+            <li><a href="lage.html">Lage</a></li>
+            <li><a href="anfrage.html">Anfrage</a></li>
+          </ul>
+        </aside>
+
+        <!-- Content innerhalb von Off-Canvas Nav -->
+        <section class="main-section">
+
+          <!-- DESKTOP NAVIGATION -->
+          <div class="icon-bar seven-up hide-for-small-only">
+            <a class="item selected" href="index.html">
+              <label>Home</label>
+            </a>
+            <a class="item" href="entdecke.html">
+              <label>Entdecke</label>
+            </a>
+            <a class="item" href="wohnen.html">
+              <label>Wohnen</label>
+            </a>
+            <a class="item">
+              <label>Aktiv</label>
+            </a>
+            <a class="item">
+              <label>Preise</label>
+            </a>
+            <a class="item" href="lage.html">
+              <label>Lage</label>
+            </a>
+            <a class="item last-item" href="anfrage.html">  <!-- Last item ohne Border auf rechter Seite -->
+              <label>Anfrage</label>
+            </a>
+          </div>
+
+          <!-- ORBIT SLIDER -->
+
+          <div class="row slider">
+            <ul class="example-orbit" data-orbit>
+              <li>
+                <img src="images/pferdneu.jpg" alt="Pferd auf Wiese" />
+              </li>
+              <li class="active">
+                <img src="images/haus.jpg" alt="Hausansicht" />
+              </li>
+              <li>
+                <img src="images/baum.jpg" alt="Wiese vor Haus" />
+              </li>
+            </ul>
+          </div>
+
+
+          <!-- MAIN SECTION MIT INHALT -->
+
+          <div class="row">
+            <div class="small-12 medium-12 large-12 columns">
+              <h2><span>Herzlich Willkommen</span></h2>
+              <p>Die Buche ist eine Ferienwohnung, die seit 2010 von mir betrieben wird. Mein Wunsch ist es Ihnen einen   sch&ouml;nen Aufenthalt zu bieten.
+                Die Wohnung mag der richtige Ort für Menschen sein, die Ruhe tanken wollen und ein gem&uuml;tliches Haus suchen, von wo aus sie schöne Wanderungen in unsere Kärntner Bergwelt, anspruchsvolle Bergtouren, interessante Ausfl&uuml;ge uvm. planen k&ouml;nnen</p>
+              <p>Ich freue mich auf Ihr Kommen!</p>
+              <p>Mit herzlichen Gr&uuml;&szlig;en,</p>
+              <p>Elisabeth Tillian</p>
+            </div>
+          </div>
+
+        </section> <!-- ENDE MAIN CONTENT MIT INHALT-->
+
+      <a class="exit-off-canvas"></a>
+
+      </div>
+    </div>
+
+
+    <!-- FOOTER AUSSERHALB VON OFF-CANVAS NAV-->
+
+    <footer class="row">
+
+        <!-- Kontaktdaten -->
+        <div class="small-12 medium-8 large-8 column">
+          <span>Elisabeth Tillian</span>
+          <span>Watschig 42 | A-9620 Hermagor</span>
+          <a href="tel:+436507678788" id="main-section">Tel.: +43 (0) 650 7678788</a>
+          <a href="mailto:elisabeth.tillian&#64;gmail.com">elisabeth.tillian&#64;gmail.com</a>
+        </div>
+
+        <!-- BILDER LINKS for medium-up -->
+        <div class="medium-2 large-2 column show-for-medium-up">
+          <a href="http://www.nassfeld.at/de" target="_blank" class="imglink"><img src="images/nassfeld_link.png" alt="Link zu nassfeld.at" class="nassfeld"></a>
+        </div>
+         <div class="medium-2 large-2 column show-for-medium-up">
+          <a href="http://www.kaernten.at/de" target="_blank" class="imglink"><img src="images/kaernten_link.png" alt="Link zu kaernten.at"></a>
+        </div>
+      
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/foundation/js/foundation.min.js"></script>
+    <script src="js/min/app-min.js"></script>
+    <!-- JQUERY UND JQUERY UI SCRIPTS -->
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+  </body>
+</html>
